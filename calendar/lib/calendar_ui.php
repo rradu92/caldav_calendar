@@ -459,7 +459,7 @@ class calendar_ui
    */
   function alarm_select($attrib = array())
   {
-    return $this->cal->lib->alarm_select($attrib, $this->cal->driver->alarm_types, $this->cal->driver->alarm_absolute);
+    return $this->cal->lib->alarm_select($attrib, $driver->alarm_types, $driver->alarm_absolute);
   }
 
   /**

@@ -21,12 +21,13 @@
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
 
+
 /**
  * Interface definition for a resources directory driver classe
  */
 abstract class resources_driver
 {
-  protected $cal;
+  protected$cal;
 
   /**
    * Default constructor
@@ -109,4 +110,5 @@ abstract class resources_driver
 
       return $events;
   }
+
 }

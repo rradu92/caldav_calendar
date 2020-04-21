@@ -116,20 +116,16 @@ class resources_driver_ldap extends resources_driver
     {
       $rec['ID'] = rcube_ldap::dn_decode($rec['ID']);
 
-      $attributes = array();
+      if (is_array($rec['attributes']) && $rec['attributes'][0]) {
+        $attributes = array();
 
-      foreach ((array) $rec['attributes'] as $sattr) {
-        $sattr = trim($sattr);
-        if ($sattr && $sattr[0] === '{') {
+        foreach ($rec['attributes'] as $sattr) {
           $attr = @json_decode($sattr, true);
           $attributes += $attr;
         }
-        else if ($sattr && empty($rec['description'])) {
-          $rec['description'] = $sattr;
-        }
-      }
 
-      $rec['attributes'] = $attributes;
+        $rec['attributes'] = $attributes;
+      }
 
       // force $rec['members'] to be an array
       if (!empty($rec['members']) && !is_array($rec['members'])) {

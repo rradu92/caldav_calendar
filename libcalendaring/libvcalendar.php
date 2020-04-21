@@ -160,7 +160,7 @@ class libvcalendar implements Iterator
             else {
                 rcube::raise_error(array(
                     'code' => 600, 'type' => 'php',
-                    'file' => __DIR__, 'line' => __LINE__,
+                    'file' => __FILE__, 'line' => __LINE__,
                     'message' => "iCal data parse error: " . $e->getMessage()),
                     true, false);
             }
@@ -253,7 +253,7 @@ class libvcalendar implements Iterator
                     // write the failing section to error log
                     rcube::raise_error(array(
                         'code' => 600, 'type' => 'php',
-                        'file' => __DIR__, 'line' => __LINE__,
+                        'file' => __FILE__, 'line' => __LINE__,
                         'message' => $e->getMessage() . " in\n" . $buffer),
                         true, false);
                 }
@@ -419,7 +419,7 @@ class libvcalendar implements Iterator
         }
 
         // map other attributes to internal fields
-        foreach ($ve->children() as $prop) {
+        foreach ($ve->children as $prop) {
             if (!($prop instanceof VObject\Property))
                 continue;
 
@@ -629,7 +629,7 @@ class libvcalendar implements Iterator
             $trigger = null;
             $alarm   = array();
 
-            foreach ($valarm->children() as $prop) {
+            foreach ($valarm->children as $prop) {
                 $value = strval($prop);
 
                 switch ($prop->name) {
@@ -755,7 +755,7 @@ class libvcalendar implements Iterator
         $this->freebusy = array('_type' => 'freebusy', 'periods' => array());
         $seen = array();
 
-        foreach ($ve->children() as $prop) {
+        foreach ($ve->children as $prop) {
             if (!($prop instanceof VObject\Property))
                 continue;
 

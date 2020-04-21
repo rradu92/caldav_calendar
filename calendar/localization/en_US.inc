@@ -20,7 +20,6 @@ $labels['workinghours'] = 'Working hours';
 $labels['add_category'] = 'Add category';
 $labels['remove_category'] = 'Remove category';
 $labels['defaultcalendar'] = 'Create new events in';
-$labels['syncperiod'] = 'Calendar Sync Interval (seconds)';
 $labels['eventcoloring'] = 'Event coloring';
 $labels['coloringmode0'] = 'According to calendar';
 $labels['coloringmode1'] = 'According to category';
@@ -33,21 +32,15 @@ $labels['afterflagdeleted'] = 'Flag as deleted';
 $labels['aftermoveto'] = 'Move to...';
 $labels['itipoptions'] = 'Event Invitations';
 $labels['afteraction'] = 'After an invitation or update message is processed';
-$labels['showweekno'] = 'Display week numbers';
-$labels['weeknonone'] = 'never';
-$labels['weeknodatepicker'] = 'in datepicker only';
-$labels['weeknoall'] = 'in datepicker and calendar view';
 
 // calendar
 $labels['calendar'] = 'Calendar';
 $labels['calendar_database'] = 'Database Calendar';
 $labels['calendars'] = 'Calendars';
 $labels['category'] = 'Category';
-$labels['addcalendar'] = 'Add calendar';
 $labels['categories'] = 'Categories';
 $labels['createcalendar'] = 'Create new calendar';
 $labels['editcalendar'] = 'Edit calendar properties';
-$labels['deletecalendar'] = 'Delete calendar';
 $labels['name'] = 'Name';
 $labels['color'] = 'Color';
 $labels['day'] = 'Day';
@@ -90,7 +83,6 @@ $labels['mystatus'] = 'My status';
 $labels['status'] = 'Status';
 $labels['status-confirmed'] = 'Confirmed';
 $labels['status-cancelled'] = 'Cancelled';
-$labels['status-tentative'] = 'Tentative';
 $labels['priority'] = 'Priority';
 $labels['sensitivity'] = 'Privacy';
 $labels['public'] = 'public';
@@ -197,6 +189,7 @@ $labels['eventcancelmailbody'] = "*\$title*\n\nWhen: \$date\n\nInvitees: \$atten
 
 // invitation handling (overrides labels from libcalendaring)
 $labels['itipobjectnotfound'] = 'The event referred by this message was not found in your calendar.';
+
 $labels['itipmailbodyaccepted'] = "\$sender has accepted the invitation to the following event:\n\n*\$title*\n\nWhen: \$date\n\nInvitees: \$attendees";
 $labels['itipmailbodytentative'] = "\$sender has tentatively accepted the invitation to the following event:\n\n*\$title*\n\nWhen: \$date\n\nInvitees: \$attendees";
 $labels['itipmailbodydeclined'] = "\$sender has declined the invitation to the following event:\n\n*\$title*\n\nWhen: \$date\n\nInvitees: \$attendees";
@@ -321,31 +314,14 @@ $labels['calendar_caldav'] = 'CalDAV Calender';
 $labels['calendar_ical'] = 'iCAL Calender';
 $labels['calendar_google'] = 'Google Calender';
 
-$labels['caldav_url'] = 'CalDAV URL';
-$labels['caldav_auth_digest'] = 'CalDAV Digest Login';
-$labels['caldav_auth_oauth'] = 'CalDAV OAuth2 Login';
+$labels['caldav_url'] = "CalDAV URL";
+$labels["caldav_auth_digest"] = "CalDAV Digest Login";
+$labels["caldav_auth_oauth"] = "CalDAV OAuth2 Login";
 
-$labels['ical_url'] = 'iCal URL';
-$labels['ical_auth_digest'] = 'iCal Basic Auth Login';
+$labels['ical_url'] = "iCal URL";
+$labels['ical_auth_digest'] = "iCal Basic Auth Login";
 
-$labels['auth'] = 'Authentication';
-$labels['login_with'] = 'Login with ';
-$labels['logout_from'] = 'Logout from ';
-
-// Audible Notifications
-$labels['notifications'] = 'Notifications';
-$labels['setting_alarm_sound'] = 'Notification sound';
-$labels['alarm_sound_aurora'] = 'Aurora';
-$labels['alarm_sound_bamboo'] = 'Bamboo';
-$labels['alarm_sound_bells'] = 'Bells';
-$labels['alarm_sound_chord'] = 'Chord';
-$labels['alarm_sound_circles'] = 'Circles';
-$labels['alarm_sound_glass'] = 'Glass';
-$labels['alarm_sound_maramba'] = 'Maramba';
-$labels['alarm_sound_metal'] = 'Metal';
-$labels['alarm_sound_ripple'] = 'Ripple';
-$labels['alarm_sound_startrek'] = 'Star Trek';
-$labels['alarm_sound_whistle'] = 'Whistle';
-$labels['alarm_sound_yoohoo'] = 'Yoohoo';
-$labels['play_sound'] = 'Play sound';
+$labels['auth'] = "Authentication";
+$labels["login_with"] = "Login with ";
+$labels['logout_from'] = "Logout from ";
 ?>

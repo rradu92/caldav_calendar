@@ -2893,7 +2893,7 @@ function rcube_calendar_ui(settings)
         calendar = { name:'', color:'cc0000', editable:true, showalarms:true };
 
       var title = rcmail.gettext((calendar.id ? 'editcalendar' : 'createcalendar'), 'calendar'),
-        params = {action: calendar.id ? 'form-edit' : 'form-new', c:{ id:calendar.id }, driver: calendar.driver, _framed: 1},
+        params = {action: calendar.id ? 'form-edit' : 'form-new', c: {id: calendar.id}, _framed: 1},
         $dialog = $('<iframe>').attr('src', rcmail.url('calendar', params)).on('load', function() {
           var contents = $(this).contents();
           contents.find('#calendar-name')
@@ -2931,7 +2931,7 @@ function rcube_calendar_ui(settings)
             data.id = calendar.id;
 
           me.saving_lock = rcmail.set_busy(true, 'calendar.savingdata');
-          rcmail.http_post('calendar', { action:(calendar.id ? 'edit' : 'new'), c:data, driver: calendar.driver });
+          rcmail.http_post('calendar', { action:(calendar.id ? 'edit' : 'new'), c:data });
           $dialog.dialog("close");
         };
 
@@ -2952,7 +2952,7 @@ function rcube_calendar_ui(settings)
     {
       var label = calendar.children ? 'deletecalendarconfirmrecursive' : 'deletecalendarconfirm';
       rcmail.confirm_dialog(rcmail.gettext(label, 'calendar'), 'delete', function() {
-        rcmail.http_post('calendar', { action:'delete', c:{ id:calendar.id }, driver: calendar.driver });
+        rcmail.http_post('calendar', { action:'delete', c:{ id:calendar.id } });
         return true;
       });
 
@@ -4171,7 +4171,6 @@ window.rcmail && rcmail.addEventListener('init', function(evt) {
 
   // configure list operations
   rcmail.register_command('calendar-create', function(){ cal.calendar_edit_dialog(null); }, true);
-  rcmail.register_command('calendar-create', function(props){ props='{"driver":"caldav"}'; cal.calendar_edit_dialog($.extend($.parseJSON(props), { name:'', color:'cc0000', editable:true, showalarms:true })); }, true);
   rcmail.register_command('calendar-edit', function(){ cal.calendar_edit_dialog(cal.calendars[cal.selected_calendar]); }, false);
   rcmail.register_command('calendar-remove', function(){ cal.calendar_remove(cal.calendars[cal.selected_calendar]); }, false);
   rcmail.register_command('calendar-delete', function(){ cal.calendar_delete(cal.calendars[cal.selected_calendar]); }, false);

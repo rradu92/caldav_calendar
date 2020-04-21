@@ -24,9 +24,11 @@ Main Options
     When opening the day or week view, the listing of events starts at this time. Of course all
     hours of a day are visible by scrolling further up.
 
-**Working hours**
-    This time range will be used in the :ref:`availability finder <calendar-availability-finder>`
-    when automatically selecting free slots for a meeting.
+.. only:: kolab
+
+    **Working hours**
+        This time range will be used in the :ref:`availability finder <calendar-availability-finder>`
+        when automatically selecting free slots for a meeting.
 
 **Event coloring**
     The coloring of the title of an event block ("outline") as well as the background color of the box ("content")
